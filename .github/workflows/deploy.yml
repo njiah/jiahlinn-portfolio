@@ -36,6 +36,12 @@ jobs:
       - name: 🔬 Lint
         run: npm run lint
 
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.PORT_TOKEN }}
+          publish_dir: ./app
+
   typecheck:
     name: ʦ TypeScript
     runs-on: ubuntu-latest
